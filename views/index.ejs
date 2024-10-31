@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <link rel="manifest" href="manifest.json">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" href="assets/icons/icon.png">
+        <title>My PWA</title>
+        <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/profile">Profile</a> </li>
+                <li><a href="/logout">Déconexion</a></li>
+                <li> <a href="/">Home</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="titleContainer">
+                <h1 class="title">Vos Offre</h1>
+                <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero fugiat dignissimos recusandae fuga maiores corporis distinctio soluta modi nam blanditiis dolorem voluptate facilis dolore eaque repudiandae enim dolor praesentium natus, ad animi at. Atque tempore explicabo aut modi, ea fugiat eum aliquam quaerat optio!</p>
+                <button class="btnProfile"><a href="/profile">Profile</a></button>
+            </div>
+            <div class="offreMain">
+                <!-- <div class="offreContainer">
+                    <img src="./assets/nike1.jpeg" alt="icone entreprise offre">
+                    <h4 class="titleOffre">Offre de Job</h4>
+                    <p class="descriptionOffre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem error mollitia voluptate laboriosam vitae.</p>
+                    <button class="postuleOffre">Postulez</button>
+                </div> -->
+                <!-- <img src="../public/assets/nike1.jpeg" alt=""> -->
+                <% offres.forEach(offre => { %>
+                    <div class="offreContainer" >
+                        <img src="<%= offre.image_path %>" alt="icone entreprise offre">
+                        <h4 class="titleOffre"><%= offre.title %></h4>
+                        <p class="descriptionOffre"><%= offre.description %></p>
+                        <button class="postuleOffre" data-id=<%= offre.id %>>Postulez</button>
+                    </div>
+                <% }); %>
+            </div>
+        </main>
+    </body>
+
+    <script src="./index.js"></script>
+</html>

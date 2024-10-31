@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="manifest" href="manifest.json">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+        <title>My PWA</title>
+        <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/profile">Profile</a> </li>
+            <li><a href="/logout">Déconexion</a></li>
+            <li> <a href="/">Home</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="Myprofile">
+            <img src="./assets/icons/icon.png" alt="image du profile">
+            <p class="nom"><%= username %></p>
+        </div>
+        <div class="postulOffre">
+            <h2>Offre postuler</h1>
+            <div class="offreMain">
+                <% if (favorites.length > 0) { %>
+                        <% favorites.forEach(fav => { %>
+                            <div class="offreContainer" >
+                                <img src="<%= fav.image_path %>" alt="Image de l'offre">
+                                    <h4 class="titleOffre"><%= fav.title %></h4>
+                                    <p class="descriptionOffre"><%= fav.description %></p>
+                            </div>
+                            
+                        <% }) %>
+                <% } else { %>
+                    <p>Vous n'avez aucun favori pour le moment.</p>
+                <% } %>
+            </div>
+        </div>
+    </main> 
+</body>
+</html>
